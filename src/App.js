@@ -85,7 +85,14 @@ const Wrapper = styled.div`
       text-align:left;
     }
   }
-`
+`;
+const Loading = styled.div`
+display: flex;
+align-items:center;
+justify-content: center;
+width: 100vw;
+height: 100vh;
+`;
 
 function App() {
 
@@ -129,7 +136,7 @@ useEffect(() => {
             "Description" :" SEP803253077750",
           }
           resolve(data);
-        }, 1000); // 1 second delay
+        }, 50000); // 1 second delay
       });
     }
 
@@ -140,7 +147,7 @@ useEffect(() => {
   }, []);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <Loading><span>Loading...</span></Loading>;
   }
 
   return (
