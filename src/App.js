@@ -168,71 +168,15 @@ moment().format('DD/MM/YYYY HH:mm:ss')
         <Rodal visible={visible} onClose={hide}>
           <div className='table-content'>
             <table>
-      <tbody>
-        <tr>
-          <th>Name</th>
-          <td>{data.Name}</td>
-        </tr>
-        <tr>
-          <th>IP Address</th>
-          <td>{data.IpAddress}</td>
-        </tr>
-        <tr>
-          <th>Dir Number</th>
-          <td>{data.DirNumber}</td>
-        </tr>
-        <tr>
-          <th>Class</th>
-          <td>{data.Class}</td>
-        </tr>
-        <tr>
-          <th>Model</th>
-          <td>{data.Model}</td>
-        </tr>
-        <tr>
-          <th>Product</th>
-          <td>{data.Product}</td>
-        </tr>
-        <tr>
-          <th>Box Product</th>
-          <td>{data.BoxProduct}</td>
-        </tr>
-        <tr>
-          <th>HTTPd</th>
-          <td>{data.Httpd}</td>
-        </tr>
-        <tr>
-          <th>Registration Attempts</th>
-          <td>{data.RegistrationAttempts}</td>
-        </tr>
-        <tr>
-          <th>CTI Controllable</th>
-          <td>{data.IsCtiControllable}</td>
-        </tr>
-        <tr>
-          <th>Login User ID</th>
-          <td>{data.LoginUserId}</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>{data.Status}</td>
-        </tr>
-        <tr>
-          <th>Status Reason</th>
-          <td>{data.StatusReason}</td>
-        </tr>
-        <tr>
-          <th>PerfMon Object</th>
-          <td>{data.PerfMonObject}</td>
-        </tr>
-        <tr>
-          <th>D Channel</th>
-          <td>{data.DChannel}</td>
-        </tr>
-        <tr>
-          <th>Description</th>
-          <td>{data.Description}</td>
-        </tr>
+            <tbody>
+        {data.map((item, index) => (
+          Object.entries(item).map(([key, value]) => (
+            <tr key={key}>
+              <th>{key}</th>
+              <td>{value}</td>
+            </tr>
+          ))
+        ))}
       </tbody>
     </table>
     </div>
