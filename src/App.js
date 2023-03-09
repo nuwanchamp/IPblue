@@ -136,7 +136,7 @@ useEffect(() => {
             "Description" :" SEP803253077750",
           }
           resolve(data);
-        }, 50000); // 1 second delay
+        }, 1000); // 1 second delay
       });
     }
 
